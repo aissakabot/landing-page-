@@ -37,6 +37,48 @@ body{
     padding:  8px 0;
 }
 
+.settings-box .settings-container{
+
+}
+.settings-box  .options-box{
+   padding: 20px;
+}
+.settings-box  .options-box h4{
+     margin: 0;
+    color: #666;
+}
+.settings-box  .options-box .colors-list{
+    list-style-type: none;
+    text-align: center;
+    padding: 0;
+}
+.settings-box  .options-box .colors-list li{
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    cursor: pointer;
+    opacity: .5;
+    display: inline-block;
+    
+}
+.settings-box  .options-box .colors-list li.active{
+   opacity: 1;
+}
+.settings-box  .options-box .colors-list li:first-child{
+  background-color: var(--main-color);
+ }
+ .settings-box  .options-box .colors-list li:nth-child(2){
+    background-color: #E91E63;
+ }
+ .settings-box  .options-box .colors-list li:nth-child(3){
+    background-color: #009688;
+ }
+ .settings-box  .options-box .colors-list li:nth-child(4){
+    background-color: #03A9F4;
+ }
+ .settings-box  .options-box .colors-list li:nth-child(5){
+    background-color: #4CAF50;
+ }
 /* end setting box */
 /* start landing page */
 .landing-page {
