@@ -5,10 +5,43 @@
 body{
     font-family: 'Open Sans', sans-serif;
 }
+/* setting-box  */
+.settings-box{
+    position: fixed;
+    top: 0;
+    left:-200px;
+    width: 200px;
+    min-height: 100vh;
+    background-color: #fff;
+    z-index: 1500;
+    transition: .3s;
+}
+.settings-box.open{
+    left:0;
+    
+}
+
+.settings-box .toggle-settings{
+    position: absolute;
+    top: 100px;
+    right: -30px;
+    background-color: #fff;
+   /* width: 30px;
+    padding:  8px 0; */
+    text-align: center;
+    cursor: pointer;
+
+}
+.settings-box .fa-gear{   
+    width: 30px;
+    padding:  8px 0;
+}
+
+/* end setting box */
 /* start landing page */
 .landing-page {
     min-height: 100vh;
-    background: url('../imgs/8.jpg');
+    background: url('../imgs/08.jpg');
     background-size: cover;
     position: relative;
 }
