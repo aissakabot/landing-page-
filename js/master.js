@@ -1,3 +1,15 @@
+// cjeck if there local storage color option
+let mainColors=localStorage.getItem("color_option")
+if(mainColors !== null){
+  document.documentElement.style.setProperty("--main-color",localStorage.getItem("color_option"))
+  document.querySelectorAll(".color-list li").forEach(el=>{
+    el.classList.remove("active")
+    //add activre class to target el
+    if(el.dataset.color == mainColors) 
+   el.classList.add("active")
+  })
+}
+
 //toggel spin class on icon
 document.querySelector(".toggle-settings .fa-gear").onclick=function(){
     // toggle spin for rotation it self
@@ -7,20 +19,76 @@ document.querySelector(".settings-box").classList.toggle("open")
 } 
 
 
-//Swirth colors
+//Swith colors
 const colorsLi=document.querySelectorAll(".colors-list li");
 colorsLi.forEach(li=>{
     //click on every list item
   li.addEventListener("click",(e)=>{
     //console.log(e.target.dataset.color)
     document.documentElement.style.setProperty("--main-color",e.target.dataset.color)
+    // set color on local storage
+    localStorage.setItem("color_option",e.target.dataset.color)
+    // remove active class from all childrens 
+    e.target.parentElement.querySelectorAll(".active").forEach(el=>{
+      el.classList.remove("active")
+      //add activre class to target el
+      e.target.classList.add("active")
+    })
   })
 })
+
+//Swith backrounf
+const randBackLi=document.querySelectorAll(".random-back span");
+randBackLi.forEach(span=>{
+    //click on every span 
+  span.addEventListener("click",(e)=>{
+    //console.log(e.target.dataset.color)
+   
+    e.target.parentElement.querySelectorAll(".active").forEach(el=>{
+      el.classList.remove("active")
+      //add activre class to target el
+      e.target.classList.add("active")
+      if(e.target.dataset.background == "yes"){
+        backgoundOption=true
+        randomizeBack()
+      } else {
+        backgoundOption=false
+        clearInterval(backroundInterval)
+      }
+    })
+  })
+})
+
 let landingpage=document.querySelector(".landing-page")
 let imgarray=["01.jpg","08.jpg","03.jpg","05.jpg","06.jpg","07.jpg"]
 
-setInterval(()=>{
+
+// random backround option
+let backgoundOption=false
+let backroundInterval
+function randomizeBack(){
+  if(backgoundOption === true){
+    backroundInterval = setInterval(()=>{
     let randomNumber=Math.floor(Math.random()* imgarray.length)
     landingpage.style.backgroundImage='url("imgs/'+imgarray[randomNumber]+'")'
     
-},10000)
+},1000)
+  }
+}
+// check if there are local storage random backgroud
+let backgroundLocalItem= localStorage.getItem("background_option")
+if(backgroundLocalItem !== null){
+  if(backgroundLocalItem ==true){
+  backgoundOption= true
+  } else {
+    backgoundOption= true
+  }
+}
+document.querySelectorAll(".random-Back span").forEach(el=>{
+  el.classList.remove('active')
+})
+if(backgroundLocalItem =="true"){
+  document.querySelector(".random-back .yes").classList.add("active")
+} else{
+  document.querySelector(".random-back .no").classList.add("active")
+}

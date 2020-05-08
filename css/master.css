@@ -2,6 +2,9 @@
 :root{
     --main-color:#ff9800
 }
+*{
+    box-sizing: border-box;
+}
 body{
     font-family: 'Open Sans', sans-serif;
 }
@@ -37,11 +40,10 @@ body{
     padding:  8px 0;
 }
 
-.settings-box .settings-container{
 
-}
 .settings-box  .options-box{
    padding: 20px;
+   text-align: center;
 }
 .settings-box  .options-box h4{
      margin: 0;
@@ -51,6 +53,7 @@ body{
     list-style-type: none;
     text-align: center;
     padding: 0;
+    margin: 10px 0 0;
 }
 .settings-box  .options-box .colors-list li{
     width: 25px;
@@ -59,13 +62,15 @@ body{
     cursor: pointer;
     opacity: .5;
     display: inline-block;
+    border: 2px solid #eee;
     
 }
 .settings-box  .options-box .colors-list li.active{
    opacity: 1;
+   border-color:  #fff;
 }
 .settings-box  .options-box .colors-list li:first-child{
-  background-color: var(--main-color);
+  background-color:#ff9800;
  }
  .settings-box  .options-box .colors-list li:nth-child(2){
     background-color: #E91E63;
@@ -79,6 +84,24 @@ body{
  .settings-box  .options-box .colors-list li:nth-child(5){
     background-color: #4CAF50;
  }
+ .settings-box  .options-box .random-back span.active{
+opacity: 1;
+ }
+ .settings-box  .options-box .yes,
+ .settings-box  .options-box .no {
+    width: 50px;
+    background-color: #009688;
+    color: #fff;
+    font-size: 12px;
+    border-radius: 4px;
+    display: inline-block;
+    font-weight: bold;
+    padding: 4px 10px;
+    margin-top:10px;
+    opacity: .5;
+    cursor: pointer;
+ }
+ 
 /* end setting box */
 /* start landing page */
 .landing-page {
