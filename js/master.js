@@ -37,7 +37,7 @@ colorsLi.forEach(li=>{
   })
 })
 
-//Swith backrounf
+//Swith backround
 const randBackLi=document.querySelectorAll(".random-back span");
 randBackLi.forEach(span=>{
     //click on every span 
@@ -156,7 +156,7 @@ document.body.appendChild(overlay)
     if(e.target.className =="close-button"){
       e.target.parentNode.remove()
        // remove overlay 
-       document.querySelector(".overlay").remove()
+       document.querySelector(".overlay-popup").remove()
     }
   })
 
