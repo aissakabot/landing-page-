@@ -8,6 +8,12 @@
 body{
     font-family: 'Open Sans', sans-serif;
 }
+.container{
+    width: 1170px;
+    padding-left: 15px;
+    padding-right: 15px;
+    max-width: auto;
+}
 /* setting-box  */
 .settings-box{
     position: fixed;
@@ -176,3 +182,147 @@ color: var(--main-color);
     margin: 0;
 }
 /* end landing page */
+/*  start about us */
+.about-us{
+    padding-top:50px ;
+    padding-bottom:50px ;
+    display: flex;
+}
+.about-us .info-box{
+    flex: 1;
+    padding: 30px;
+}
+.about-us .info-box h2{
+    font-size: 30px;
+    font-weight: bold;
+    color:var(--main-color) ;
+    margin: 0 0 10px;
+}
+.about-us .info-box p{
+line-height: 1.7;
+color: #767676;
+margin: 0;
+}
+.about-us .image-box{
+    float: 1;
+    text-align: center;
+}
+.about-us .image-box img{
+width: 250px;
+}
+/* end about us*/
+/* start section skills */
+.skills{
+padding-bottom: 50px;
+padding-top: 50px;
+background-color: #EEE;
+}
+.skills h2{
+    font-weight: bold;
+    font-size: 30px;
+    margin: 0 0 50px;
+    color: var(--main-color);
+    text-align: center;
+}
+.skills .skill-box{
+  background-color: #fff;
+  display: flex;
+  padding: 10px;
+  margin-bottom: 15px;
+  
+}
+.skills .skill-box .skill-name{
+font-weight: bold;
+width: 120px;
+text-align: center;
+line-height: 30px;
+
+}
+.skills .skill-box .skill-progress{
+    height: 30px;
+     width:100% ; /* or  calc(100% -110px) */
+    background-color: #f6f6f6;
+    border-radius: 6px;
+    position: relative;
+    overflow: hidden;
+
+}
+.skills .skill-box .skill-progress span{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color:var(--main-color);
+    width: 0;
+     height: 100%;
+     transition: all .8s;
+}
+/* end section skills */
+/* start section gallery */
+.gallery{
+padding-top: 50px;
+padding-bottom: 50px;
+}
+.gallery h2{
+    font-weight: bold;
+    font-size: 30px;
+    margin: 0 0 50px;
+    color: var(--main-color);
+    text-align: center;
+}
+.gallery .images-box{
+text-align: center;
+}
+.gallery .image-box img{
+width: 200px;
+height: 200px;
+background-color: #f6f6f6;
+border: 1px solid #ccc;
+margin:5px;
+padding: 3px;
+cursor: pointer;
+}
+.overlay-popup{
+    position: fixed;
+    top:0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .7);
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+}
+.popup-box{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: #fff;
+    border: 1px solid #ccc;
+    z-index: 1001;
+    padding: 20px;
+}
+.popup-box h3{
+    font-weight: bold;
+    text-align: center;
+    color: var(--main-color);
+    margin:0  0 20px;
+}
+.popup-box .close-button{
+    position: absolute;
+    top:-15px;
+    right: -15px;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    font-size: 15px;
+    background-color: var(--main-color);
+    color: #fff;
+    cursor: pointer;
+    border-radius: 50%;
+    font-weight: bold;
+    font-family: Arial,Tahoma;
+}
+.popup-box img{
+    max-width: 100%;
+}
+/* end section galley */

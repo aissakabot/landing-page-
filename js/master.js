@@ -92,3 +92,73 @@ if(backgroundLocalItem =="true"){
 } else{
   document.querySelector(".random-back .no").classList.add("active")
 }
+// select skills
+let ourSkills=document.querySelector(".skills")
+window.onscroll= function(){
+ 
+ let skillOffsetTop=ourSkills.offsetTop;
+ let skillOunterHeight= ourSkills.offsetHeight
+ let windowHeight=this.innerHeight
+ let windowscrollTop=this.pageYOffset 
+  
+//  console.log(skillOffsetTop + skillOunterHeight - windowHeight)
+//   console.log(windowscrollTop)
+  
+
+ if(windowscrollTop > (skillOffsetTop + skillOunterHeight - windowHeight)) {
+  
+   let allSkills=document.querySelectorAll(".skill-box .skill-progress span")
+ allSkills.forEach(el=>{
+   el.style.width=el.dataset.progress
+ })
+
+}
+ }
+  // galery
+  let ourGalery=document.querySelectorAll(".gallery img")
+  ourGalery.forEach(imgg => {
+    
+    imgg.addEventListener("click",(e)=>{
+      alert("clikc image")
+    console.log(imgg.src)
+let overlay=document.createElement("div")
+overlay.className="overlay-popup"
+// add el to body
+document.body.appendChild(overlay)
+ // add popup box
+ let popupBox=document.createElement("div")
+ popupBox.className="popup-box"
+  //create the heading image
+  if(imgg.alt !== null){
+    let imageHeading=document.createElement("h3")
+  let imagetext=document.createTextNode(imgg.alt)
+  imageHeading.appendChild(imagetext)
+  popupBox.appendChild(imageHeading)
+
+}
+  
+ // create the image
+ let popupImg= document.createElement("img")
+ popupImg.src=imgg.src
+ //add img to popupbox
+ popupBox.appendChild(popupImg)
+  //add popup to boody
+  document.body.appendChild(popupBox)
+
+  // create the close span
+  let closeSpan=document.createElement("span")
+  let closeText=document.createTextNode("X")
+  closeSpan.appendChild(closeText)
+  closeSpan.className="close-button"
+  popupBox.appendChild(closeSpan)
+  // close poppup
+  document.addEventListener("click",function(e){
+    if(e.target.className =="close-button"){
+      e.target.parentNode.remove()
+       // remove overlay 
+       document.querySelector(".overlay").remove()
+    }
+  })
+
+    });
+  });
