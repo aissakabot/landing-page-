@@ -162,3 +162,12 @@ document.body.appendChild(overlay)
 
     });
   });
+  // nav bullets
+  let bullets=document.querySelectorAll(".nav-bullets .bullet")
+  bullets.forEach(bullet =>{
+    bullet.addEventListener("click",(e)=>{
+     document.querySelector(e.target.dataset.section).scrollIntoView({
+       behavior:'smooth'
+     })
+    })
+  })
